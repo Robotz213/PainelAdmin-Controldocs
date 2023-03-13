@@ -21,12 +21,12 @@ import json
 from Config.sqlconfig import ConnectDB
 import pandas as pd
 import pathlib
+from Scripts.ui_cadastroemlotes import Ui_Cadastro
 
 
 
 
-
-class Login(QWidget, Ui_Form, ):
+class Login(QWidget, Ui_Form):
     
     def __init__(self) -> None:
         super(Login, self).__init__()
@@ -88,6 +88,7 @@ class MainWindow(QMainWindow, Ui_CrawTo):
 
         ## Fechar Aplicação
         self.Sair.clicked.connect(lambda: self.exitapp())
+        self.InsertemLotes.clicked.connect(lambda: self.cadastraremlotes())
         
 
 
@@ -99,8 +100,23 @@ class MainWindow(QMainWindow, Ui_CrawTo):
 
             sys.exit()
 
+    def cadastraremlotes(self):
+
+        self.w = CadastroEmLotes()
+        self.w.show()
+        
+
+class CadastroEmLotes(QWidget, Ui_Cadastro):
+    def __init__(self) -> None:
+        super(CadastroEmLotes, self).__init__()
+        self.setupUi(self)
+        self.setWindowTitle('Cadastro Em Lote')
+
 
         
+    def openpath(self)
+        
+   
 if __name__ == "__main__":
     
     
