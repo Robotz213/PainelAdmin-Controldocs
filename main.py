@@ -57,10 +57,6 @@ class Login(QWidget, Ui_Form, ):
                     if hashed_password in pass_word:
                         self.w = MainWindow()
                         self.w.show()
-                        
-                        with open(pathlib.Path(__file__).parent.resolve()/"logfile.txt", "w") as f:
-                            sleep(2)
-                            f.write(self.UserFrame.text())
                         self.close()
                         
                             
@@ -86,16 +82,12 @@ class MainWindow(QMainWindow, Ui_CrawTo):
         self.setWindowTitle("CrawJUD - Gestão Processual")
 
         ## Janelas do Aplicativo
-        
-        self.Info.clicked.connect(lambda: self.Pages.setCurrentWidget(self.Sobre))
-        self.Processos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.Processos_Lista))
-        self.Prazos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.Agenda))
-        self.UsersConfig.clicked.connect(lambda: self.newuser())
-        self.EnterCadastro.clicked.connect(lambda: self.searchproc())
-        self.reload.clicked.connect(lambda: self.reset_table())
-    ## Fechar Aplicação
+        self.retornar.clicked.connect(lambda: self.Pages.setCurrentWidget(self.MenuPrincipal))
+        self.CadastrarUsuario.clicked.connect(lambda: self.Pages.setCurrentWidget(self.CadastroUsuario))
+        self.FileUpload.clicked.connect(lambda: self.Pages.setCurrentWidget(self.UploadArquivos))
+
+        ## Fechar Aplicação
         self.Sair.clicked.connect(lambda: self.exitapp())
-        self.progressBar
         
 
 
