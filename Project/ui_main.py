@@ -87,6 +87,94 @@ class Ui_CrawTo(object):
         self.Pages.setObjectName(u"Pages")
         self.CadastroUsuario = QWidget()
         self.CadastroUsuario.setObjectName(u"CadastroUsuario")
+        self.verticalLayout_2 = QVBoxLayout(self.CadastroUsuario)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.label = QLabel(self.CadastroUsuario)
+        self.label.setObjectName(u"label")
+        font = QFont()
+        font.setPointSize(20)
+        self.label.setFont(font)
+
+        self.verticalLayout_2.addWidget(self.label, 0, Qt.AlignHCenter)
+
+        self.horizontalLayout_5 = QHBoxLayout()
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.label_2 = QLabel(self.CadastroUsuario)
+        self.label_2.setObjectName(u"label_2")
+        font1 = QFont()
+        font1.setPointSize(15)
+        self.label_2.setFont(font1)
+
+        self.horizontalLayout_5.addWidget(self.label_2)
+
+        self.lineEdit = QLineEdit(self.CadastroUsuario)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setFont(font1)
+
+        self.horizontalLayout_5.addWidget(self.lineEdit)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_5)
+
+        self.horizontalLayout_6 = QHBoxLayout()
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.label_3 = QLabel(self.CadastroUsuario)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setFont(font1)
+
+        self.horizontalLayout_6.addWidget(self.label_3)
+
+        self.lineEdit_2 = QLineEdit(self.CadastroUsuario)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setFont(font1)
+
+        self.horizontalLayout_6.addWidget(self.lineEdit_2)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_6)
+
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.label_4 = QLabel(self.CadastroUsuario)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setFont(font1)
+
+        self.horizontalLayout_7.addWidget(self.label_4)
+
+        self.lineEdit_3 = QLineEdit(self.CadastroUsuario)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lineEdit_3.setFont(font1)
+
+        self.horizontalLayout_7.addWidget(self.lineEdit_3)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_7)
+
+        self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.label_5 = QLabel(self.CadastroUsuario)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setFont(font1)
+
+        self.horizontalLayout_8.addWidget(self.label_5)
+
+        self.lineEdit_4 = QLineEdit(self.CadastroUsuario)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.lineEdit_4.setFont(font1)
+
+        self.horizontalLayout_8.addWidget(self.lineEdit_4)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_8)
+
+        self.pushButton = QPushButton(self.CadastroUsuario)
+        self.pushButton.setObjectName(u"pushButton")
+        font2 = QFont()
+        font2.setPointSize(22)
+        self.pushButton.setFont(font2)
+
+        self.verticalLayout_2.addWidget(self.pushButton)
+
         self.Pages.addWidget(self.CadastroUsuario)
         self.UploadArquivos = QWidget()
         self.UploadArquivos.setObjectName(u"UploadArquivos")
@@ -105,12 +193,6 @@ class Ui_CrawTo(object):
         self.widget.setObjectName(u"widget")
         self.gridLayout = QGridLayout(self.widget)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.progressBar = QProgressBar(self.widget)
-        self.progressBar.setObjectName(u"progressBar")
-        self.progressBar.setValue(0)
-
-        self.gridLayout.addWidget(self.progressBar, 1, 0, 1, 1)
-
         self.frame = QFrame(self.widget)
         self.frame.setObjectName(u"frame")
         self.frame.setMinimumSize(QSize(200, 0))
@@ -123,16 +205,16 @@ class Ui_CrawTo(object):
         self.CadastrarUsuario = QPushButton(self.frame)
         self.CadastrarUsuario.setObjectName(u"CadastrarUsuario")
         self.CadastrarUsuario.setMinimumSize(QSize(200, 60))
-        font = QFont()
-        font.setPointSize(12)
-        self.CadastrarUsuario.setFont(font)
+        font3 = QFont()
+        font3.setPointSize(12)
+        self.CadastrarUsuario.setFont(font3)
 
         self.horizontalLayout_3.addWidget(self.CadastrarUsuario)
 
         self.FileUpload = QPushButton(self.frame)
         self.FileUpload.setObjectName(u"FileUpload")
         self.FileUpload.setMinimumSize(QSize(200, 60))
-        self.FileUpload.setFont(font)
+        self.FileUpload.setFont(font3)
 
         self.horizontalLayout_3.addWidget(self.FileUpload)
 
@@ -155,7 +237,7 @@ class Ui_CrawTo(object):
 
         self.retranslateUi(CrawTo)
 
-        self.Pages.setCurrentIndex(2)
+        self.Pages.setCurrentIndex(0)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -166,6 +248,12 @@ class Ui_CrawTo(object):
         CrawTo.setWindowTitle(QCoreApplication.translate("CrawTo", u"MainWindow", None))
         self.retornar.setText("")
         self.Sair.setText("")
+        self.label.setText(QCoreApplication.translate("CrawTo", u"Cadastro de Usu\u00e1rio", None))
+        self.label_2.setText(QCoreApplication.translate("CrawTo", u"Nome", None))
+        self.label_3.setText(QCoreApplication.translate("CrawTo", u"Sobrenome", None))
+        self.label_4.setText(QCoreApplication.translate("CrawTo", u"Senha", None))
+        self.label_5.setText(QCoreApplication.translate("CrawTo", u"E-mail", None))
+        self.pushButton.setText(QCoreApplication.translate("CrawTo", u"SALVAR", None))
         self.CadastrarUsuario.setText(QCoreApplication.translate("CrawTo", u"Cadastrar Usu\u00e1rio", None))
         self.FileUpload.setText(QCoreApplication.translate("CrawTo", u"Upload de Arquivos", None))
     # retranslateUi
