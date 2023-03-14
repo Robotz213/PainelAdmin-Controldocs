@@ -13,19 +13,20 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
-class Ui_Cadastro(object):
-    def setupUi(self, Cadastro):
-        if not Cadastro.objectName():
-            Cadastro.setObjectName(u"Cadastro")
-        Cadastro.resize(370, 144)
-        Cadastro.setMinimumSize(QSize(370, 120))
-        Cadastro.setMaximumSize(QSize(370, 144))
-        Cadastro.setStyleSheet(u"background-color: rgb(0, 0, 0);")
-        self.verticalLayout_4 = QVBoxLayout(Cadastro)
+class Ui_Upload(object):
+    def setupUi(self, Upload):
+        if not Upload.objectName():
+            Upload.setObjectName(u"Upload")
+        Upload.resize(370, 144)
+        Upload.setMinimumSize(QSize(370, 120))
+        Upload.setMaximumSize(QSize(370, 144))
+        Upload.setStyleSheet(u"background-color: rgb(0, 0, 0);")
+        self.verticalLayout_4 = QVBoxLayout(Upload)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.widget = QWidget(Cadastro)
+        self.widget = QWidget(Upload)
         self.widget.setObjectName(u"widget")
-        self.widget.setStyleSheet(u"background-color: rgb(140, 140, 140);")
+        self.widget.setStyleSheet(u"background-color: rgb(140, 140, 140);\n"
+"border-radius: 5px;")
         self.verticalLayout_3 = QVBoxLayout(self.widget)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.frame = QFrame(self.widget)
@@ -48,13 +49,13 @@ class Ui_Cadastro(object):
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.lineEdit = QLineEdit(self.frame)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.lineEndr = QLineEdit(self.frame)
+        self.lineEndr.setObjectName(u"lineEndr")
+        self.lineEndr.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-radius: 2px;\n"
 "")
 
-        self.horizontalLayout.addWidget(self.lineEdit)
+        self.horizontalLayout.addWidget(self.lineEndr)
 
         self.BuscarPlanilha = QPushButton(self.frame)
         self.BuscarPlanilha.setObjectName(u"BuscarPlanilha")
@@ -105,15 +106,15 @@ class Ui_Cadastro(object):
         self.verticalLayout_4.addWidget(self.widget, 0, Qt.AlignVCenter)
 
 
-        self.retranslateUi(Cadastro)
+        self.retranslateUi(Upload)
 
-        QMetaObject.connectSlotsByName(Cadastro)
+        QMetaObject.connectSlotsByName(Upload)
     # setupUi
 
-    def retranslateUi(self, Cadastro):
-        Cadastro.setWindowTitle(QCoreApplication.translate("Cadastro", u"Form", None))
-        self.label.setText(QCoreApplication.translate("Cadastro", u"Informe a planilha com arquivos a serem enviados", None))
-        self.BuscarPlanilha.setText(QCoreApplication.translate("Cadastro", u"Buscar", None))
-        self.IniciarUpload.setText(QCoreApplication.translate("Cadastro", u"Iniciar", None))
+    def retranslateUi(self, Upload):
+        Upload.setWindowTitle(QCoreApplication.translate("Upload", u"Form", None))
+        self.label.setText(QCoreApplication.translate("Upload", u"Informe a planilha com arquivos a serem enviados", None))
+        self.BuscarPlanilha.setText(QCoreApplication.translate("Upload", u"Buscar", None))
+        self.IniciarUpload.setText(QCoreApplication.translate("Upload", u"Iniciar", None))
     # retranslateUi
 

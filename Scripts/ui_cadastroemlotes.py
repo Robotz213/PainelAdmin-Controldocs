@@ -25,7 +25,7 @@ class Ui_Cadastro(object):
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.widget = QWidget(Cadastro)
         self.widget.setObjectName(u"widget")
-        self.widget.setStyleSheet(u"background-color: rgb(140, 140, 140);")
+        self.widget.setStyleSheet(u"border-radius: 5px;background-color: rgb(140, 140, 140);")
         self.verticalLayout_3 = QVBoxLayout(self.widget)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.frame = QFrame(self.widget)
@@ -48,13 +48,13 @@ class Ui_Cadastro(object):
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.lineEdit = QLineEdit(self.frame)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.lineEndr = QLineEdit(self.frame)
+        self.lineEndr.setObjectName(u"lineEndr")
+        self.lineEndr.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-radius: 2px;\n"
 "")
 
-        self.horizontalLayout.addWidget(self.lineEdit)
+        self.horizontalLayout.addWidget(self.lineEndr)
 
         self.BuscarPlanilha = QPushButton(self.frame)
         self.BuscarPlanilha.setObjectName(u"BuscarPlanilha")

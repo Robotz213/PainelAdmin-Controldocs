@@ -32,7 +32,7 @@
    <item alignment="Qt::AlignVCenter">
     <widget class="QWidget" name="widget" native="true">
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(140, 140, 140);</string>
+      <string notr="true">border-radius: 5px;background-color: rgb(140, 140, 140);</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
@@ -65,7 +65,7 @@ background-color: rgba(0, 0, 0, 0.3);</string>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
-              <widget class="QLineEdit" name="lineEdit">
+              <widget class="QLineEdit" name="lineEndr">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 2px;

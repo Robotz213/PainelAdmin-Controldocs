@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Cadastro</class>
- <widget class="QWidget" name="Cadastro">
+ <class>Avisos</class>
+ <widget class="QWidget" name="Avisos">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -32,7 +32,7 @@
    <item alignment="Qt::AlignVCenter">
     <widget class="QWidget" name="widget" native="true">
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(140, 140, 140);</string>
+      <string notr="true">border-radius: 5px;background-color: rgb(140, 140, 140);</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
@@ -58,14 +58,14 @@
 background-color: rgba(0, 0, 0, 0.3);</string>
              </property>
              <property name="text">
-              <string>Informe a planilha com usuários a serem cadastrados</string>
+              <string>Informe a planilha de avisos</string>
              </property>
             </widget>
            </item>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
-              <widget class="QLineEdit" name="lineEdit">
+              <widget class="QLineEdit" name="lineEndr">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 2px;
@@ -108,7 +108,7 @@ border-radius: 5px
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="IniciarCadastro">
+       <widget class="QPushButton" name="EnvioAvisos">
         <property name="font">
          <font>
           <pointsize>10</pointsize>

@@ -13,19 +13,19 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
-class Ui_Cadastro(object):
-    def setupUi(self, Cadastro):
-        if not Cadastro.objectName():
-            Cadastro.setObjectName(u"Cadastro")
-        Cadastro.resize(370, 144)
-        Cadastro.setMinimumSize(QSize(370, 120))
-        Cadastro.setMaximumSize(QSize(370, 144))
-        Cadastro.setStyleSheet(u"background-color: rgb(0, 0, 0);")
-        self.verticalLayout_4 = QVBoxLayout(Cadastro)
+class Ui_Avisos(object):
+    def setupUi(self, Avisos):
+        if not Avisos.objectName():
+            Avisos.setObjectName(u"Avisos")
+        Avisos.resize(370, 144)
+        Avisos.setMinimumSize(QSize(370, 120))
+        Avisos.setMaximumSize(QSize(370, 144))
+        Avisos.setStyleSheet(u"background-color: rgb(0, 0, 0);")
+        self.verticalLayout_4 = QVBoxLayout(Avisos)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.widget = QWidget(Cadastro)
+        self.widget = QWidget(Avisos)
         self.widget.setObjectName(u"widget")
-        self.widget.setStyleSheet(u"background-color: rgb(140, 140, 140);")
+        self.widget.setStyleSheet(u"border-radius: 5px;background-color: rgb(140, 140, 140);")
         self.verticalLayout_3 = QVBoxLayout(self.widget)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.frame = QFrame(self.widget)
@@ -48,13 +48,13 @@ class Ui_Cadastro(object):
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.lineEdit = QLineEdit(self.frame)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.lineEndr = QLineEdit(self.frame)
+        self.lineEndr.setObjectName(u"lineEndr")
+        self.lineEndr.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-radius: 2px;\n"
 "")
 
-        self.horizontalLayout.addWidget(self.lineEdit)
+        self.horizontalLayout.addWidget(self.lineEndr)
 
         self.BuscarPlanilha = QPushButton(self.frame)
         self.BuscarPlanilha.setObjectName(u"BuscarPlanilha")
@@ -82,11 +82,11 @@ class Ui_Cadastro(object):
 
         self.verticalLayout_3.addWidget(self.frame)
 
-        self.IniciarCadastro = QPushButton(self.widget)
-        self.IniciarCadastro.setObjectName(u"IniciarCadastro")
-        self.IniciarCadastro.setFont(font)
-        self.IniciarCadastro.setCursor(QCursor(Qt.PointingHandCursor))
-        self.IniciarCadastro.setStyleSheet(u"QPushButton{\n"
+        self.EnvioAvisos = QPushButton(self.widget)
+        self.EnvioAvisos.setObjectName(u"EnvioAvisos")
+        self.EnvioAvisos.setFont(font)
+        self.EnvioAvisos.setCursor(QCursor(Qt.PointingHandCursor))
+        self.EnvioAvisos.setStyleSheet(u"QPushButton{\n"
 "background-color: rgba(255, 255, 255, 0.5);\n"
 "border: 3px solid rgb(132, 132, 132);\n"
 "border-radius: 5px;\n"
@@ -99,21 +99,21 @@ class Ui_Cadastro(object):
 "border-radius: 5px\n"
 "}")
 
-        self.verticalLayout_3.addWidget(self.IniciarCadastro)
+        self.verticalLayout_3.addWidget(self.EnvioAvisos)
 
 
         self.verticalLayout_4.addWidget(self.widget, 0, Qt.AlignVCenter)
 
 
-        self.retranslateUi(Cadastro)
+        self.retranslateUi(Avisos)
 
-        QMetaObject.connectSlotsByName(Cadastro)
+        QMetaObject.connectSlotsByName(Avisos)
     # setupUi
 
-    def retranslateUi(self, Cadastro):
-        Cadastro.setWindowTitle(QCoreApplication.translate("Cadastro", u"Form", None))
-        self.label.setText(QCoreApplication.translate("Cadastro", u"Informe a planilha com usu\u00e1rios a serem cadastrados", None))
-        self.BuscarPlanilha.setText(QCoreApplication.translate("Cadastro", u"Buscar", None))
-        self.IniciarCadastro.setText(QCoreApplication.translate("Cadastro", u"Iniciar", None))
+    def retranslateUi(self, Avisos):
+        Avisos.setWindowTitle(QCoreApplication.translate("Avisos", u"Form", None))
+        self.label.setText(QCoreApplication.translate("Avisos", u"Informe a planilha de avisos", None))
+        self.BuscarPlanilha.setText(QCoreApplication.translate("Avisos", u"Buscar", None))
+        self.EnvioAvisos.setText(QCoreApplication.translate("Avisos", u"Iniciar", None))
     # retranslateUi
 
