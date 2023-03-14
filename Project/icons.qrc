@@ -1,6 +1,9 @@
 <RCC>
   <qresource prefix="home">
+    <file>../Icons/aviso.png</file>
+    <file>../Icons/envio.png</file>
     <file>../Icons/retorna.png</file>
+    <file>../Icons/do-utilizador.png</file>
     <file>../Icons/simbolo-de-interface-da-roda-dentada-de-configuracao.png</file>
     <file>../Icons/do-utilizador.png</file>
     <file>../Icons/caderno.png</file>

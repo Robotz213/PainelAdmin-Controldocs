@@ -124,8 +124,8 @@ class Ui_CrawTo(object):
         self.frame_4.setStyleSheet(u"background-color: rgba(145, 145, 145, 0.5);")
         self.frame_4.setFrameShape(QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.frame_4)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_9 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.verticalLayout_6 = QVBoxLayout()
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.Nome = QLabel(self.frame_4)
@@ -144,7 +144,7 @@ class Ui_CrawTo(object):
         self.verticalLayout_6.addWidget(self.lineNome)
 
 
-        self.verticalLayout_3.addLayout(self.verticalLayout_6)
+        self.verticalLayout_9.addLayout(self.verticalLayout_6)
 
         self.verticalLayout_5 = QVBoxLayout()
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -162,7 +162,7 @@ class Ui_CrawTo(object):
         self.verticalLayout_5.addWidget(self.lineCPF)
 
 
-        self.verticalLayout_3.addLayout(self.verticalLayout_5)
+        self.verticalLayout_9.addLayout(self.verticalLayout_5)
 
         self.verticalLayout_7 = QVBoxLayout()
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
@@ -184,47 +184,89 @@ class Ui_CrawTo(object):
         self.verticalLayout_7.addItem(self.horizontalSpacer_3)
 
 
-        self.verticalLayout_3.addLayout(self.verticalLayout_7)
+        self.verticalLayout_9.addLayout(self.verticalLayout_7)
 
-        self.verticalLayout_8 = QVBoxLayout()
-        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.label = QLabel(self.frame_4)
+        self.label.setObjectName(u"label")
+        self.label.setFont(font1)
+
+        self.verticalLayout_3.addWidget(self.label)
+
+        self.lineEdit = QLineEdit(self.frame_4)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setFont(font1)
+        self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+
+        self.verticalLayout_3.addWidget(self.lineEdit)
+
+
+        self.verticalLayout_9.addLayout(self.verticalLayout_3)
+
         self.Matricula = QLabel(self.frame_4)
         self.Matricula.setObjectName(u"Matricula")
         self.Matricula.setFont(font1)
 
-        self.verticalLayout_8.addWidget(self.Matricula)
+        self.verticalLayout_9.addWidget(self.Matricula)
 
         self.lineMatricula = QLineEdit(self.frame_4)
         self.lineMatricula.setObjectName(u"lineMatricula")
         self.lineMatricula.setFont(font1)
         self.lineMatricula.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.verticalLayout_8.addWidget(self.lineMatricula)
+        self.verticalLayout_9.addWidget(self.lineMatricula)
 
         self.horizontalSpacer_4 = QSpacerItem(250, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
-        self.verticalLayout_8.addItem(self.horizontalSpacer_4)
+        self.verticalLayout_9.addItem(self.horizontalSpacer_4)
 
-
-        self.verticalLayout_3.addLayout(self.verticalLayout_8)
-
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.verticalLayout_8 = QVBoxLayout()
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.SenhaDeAcesso = QLabel(self.frame_4)
         self.SenhaDeAcesso.setObjectName(u"SenhaDeAcesso")
         self.SenhaDeAcesso.setFont(font1)
 
-        self.verticalLayout_3.addWidget(self.SenhaDeAcesso)
+        self.verticalLayout_8.addWidget(self.SenhaDeAcesso)
 
         self.lineSenha = QLineEdit(self.frame_4)
         self.lineSenha.setObjectName(u"lineSenha")
         self.lineSenha.setFont(font1)
         self.lineSenha.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.verticalLayout_3.addWidget(self.lineSenha)
+        self.verticalLayout_8.addWidget(self.lineSenha)
+
+
+        self.horizontalLayout_7.addLayout(self.verticalLayout_8)
+
+        self.verticalLayout_4 = QVBoxLayout()
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.label_2 = QLabel(self.frame_4)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setFont(font1)
+
+        self.verticalLayout_4.addWidget(self.label_2)
+
+        self.lineEdit_2 = QLineEdit(self.frame_4)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setFont(font1)
+        self.lineEdit_2.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+
+        self.verticalLayout_4.addWidget(self.lineEdit_2)
+
+
+        self.horizontalLayout_7.addLayout(self.verticalLayout_4)
+
+
+        self.verticalLayout_9.addLayout(self.horizontalLayout_7)
 
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.InsertemLotes = QPushButton(self.frame_4)
         self.InsertemLotes.setObjectName(u"InsertemLotes")
+        self.InsertemLotes.setMinimumSize(QSize(0, 50))
         self.InsertemLotes.setFont(font1)
         self.InsertemLotes.setCursor(QCursor(Qt.PointingHandCursor))
         self.InsertemLotes.setStyleSheet(u"QPushButton{\n"
@@ -243,6 +285,7 @@ class Ui_CrawTo(object):
 
         self.Salvar = QPushButton(self.frame_4)
         self.Salvar.setObjectName(u"Salvar")
+        self.Salvar.setMinimumSize(QSize(0, 50))
         self.Salvar.setFont(font1)
         self.Salvar.setCursor(QCursor(Qt.PointingHandCursor))
         self.Salvar.setStyleSheet(u"QPushButton{\n"
@@ -260,11 +303,11 @@ class Ui_CrawTo(object):
         self.horizontalLayout_6.addWidget(self.Salvar)
 
 
-        self.verticalLayout_3.addLayout(self.horizontalLayout_6)
+        self.verticalLayout_9.addLayout(self.horizontalLayout_6)
 
         self.verticalSpacer_2 = QSpacerItem(20, 212, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_3.addItem(self.verticalSpacer_2)
+        self.verticalLayout_9.addItem(self.verticalSpacer_2)
 
 
         self.verticalLayout_2.addWidget(self.frame_4)
@@ -273,6 +316,9 @@ class Ui_CrawTo(object):
         self.UploadArquivos = QWidget()
         self.UploadArquivos.setObjectName(u"UploadArquivos")
         self.Pages.addWidget(self.UploadArquivos)
+        self.CentralDeAvisos = QWidget()
+        self.CentralDeAvisos.setObjectName(u"CentralDeAvisos")
+        self.Pages.addWidget(self.CentralDeAvisos)
         self.MenuPrincipal = QWidget()
         self.MenuPrincipal.setObjectName(u"MenuPrincipal")
         self.horizontalLayout_2 = QHBoxLayout(self.MenuPrincipal)
@@ -285,38 +331,125 @@ class Ui_CrawTo(object):
         self.tabWidget.setUsesScrollButtons(False)
         self.widget = QWidget()
         self.widget.setObjectName(u"widget")
-        self.gridLayout = QGridLayout(self.widget)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.frame = QFrame(self.widget)
-        self.frame.setObjectName(u"frame")
-        self.frame.setMinimumSize(QSize(200, 0))
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_4 = QHBoxLayout(self.frame)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.widget.setStyleSheet(u"background-color: rgb(0, 0, 0);")
+        self.verticalLayout_13 = QVBoxLayout(self.widget)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.horizontalSpacer_6 = QSpacerItem(1047, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.verticalLayout_13.addItem(self.horizontalSpacer_6)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 183, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_13.addItem(self.verticalSpacer_3)
+
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.CadastrarUsuario = QPushButton(self.frame)
+        self.verticalLayout_12 = QVBoxLayout()
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.EnvioDeAvisos = QLabel(self.widget)
+        self.EnvioDeAvisos.setObjectName(u"EnvioDeAvisos")
+        self.EnvioDeAvisos.setFont(font1)
+        self.EnvioDeAvisos.setStyleSheet(u"color: rgb(255, 255, 255);")
+
+        self.verticalLayout_12.addWidget(self.EnvioDeAvisos)
+
+        self.CentralAvisos = QPushButton(self.widget)
+        self.CentralAvisos.setObjectName(u"CentralAvisos")
+        self.CentralAvisos.setMinimumSize(QSize(200, 200))
+        self.CentralAvisos.setCursor(QCursor(Qt.PointingHandCursor))
+        self.CentralAvisos.setStyleSheet(u"QPushButton{\n"
+"image: url(:/home/Icons/aviso.png);\n"
+"background-color: rgba(255, 255, 255, 0.5);\n"
+"border: 2px solid rgb(132, 132, 132);\n"
+"border-radius: 5px;\n"
+"margin: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: rgb(255, 255, 255);\n"
+"border: 5px solid rgb(102, 102, 102);\n"
+"border-radius: 5px\n"
+"}")
+
+        self.verticalLayout_12.addWidget(self.CentralAvisos)
+
+
+        self.horizontalLayout_3.addLayout(self.verticalLayout_12)
+
+        self.verticalLayout_11 = QVBoxLayout()
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.CadastroUsuarios = QLabel(self.widget)
+        self.CadastroUsuarios.setObjectName(u"CadastroUsuarios")
+        self.CadastroUsuarios.setFont(font1)
+        self.CadastroUsuarios.setStyleSheet(u"color: rgb(255, 255, 255);")
+
+        self.verticalLayout_11.addWidget(self.CadastroUsuarios)
+
+        self.CadastrarUsuario = QPushButton(self.widget)
         self.CadastrarUsuario.setObjectName(u"CadastrarUsuario")
-        self.CadastrarUsuario.setMinimumSize(QSize(200, 60))
-        font2 = QFont()
-        font2.setPointSize(12)
-        self.CadastrarUsuario.setFont(font2)
+        self.CadastrarUsuario.setMinimumSize(QSize(200, 200))
+        self.CadastrarUsuario.setCursor(QCursor(Qt.PointingHandCursor))
+        self.CadastrarUsuario.setStyleSheet(u"QPushButton{\n"
+"image: url(:/home/Icons/do-utilizador.png);\n"
+"background-color: rgba(255, 255, 255, 0.5);\n"
+"border: 2px solid rgb(132, 132, 132);\n"
+"border-radius: 5px;\n"
+"margin: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: rgb(255, 255, 255);\n"
+"border: 5px solid rgb(102, 102, 102);\n"
+"border-radius: 5px\n"
+"}")
 
-        self.horizontalLayout_3.addWidget(self.CadastrarUsuario)
+        self.verticalLayout_11.addWidget(self.CadastrarUsuario)
 
-        self.FileUpload = QPushButton(self.frame)
+
+        self.horizontalLayout_3.addLayout(self.verticalLayout_11)
+
+        self.verticalLayout_10 = QVBoxLayout()
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.ArquivoEnvio = QLabel(self.widget)
+        self.ArquivoEnvio.setObjectName(u"ArquivoEnvio")
+        self.ArquivoEnvio.setFont(font1)
+        self.ArquivoEnvio.setStyleSheet(u"color: rgb(255, 255, 255);")
+
+        self.verticalLayout_10.addWidget(self.ArquivoEnvio)
+
+        self.FileUpload = QPushButton(self.widget)
         self.FileUpload.setObjectName(u"FileUpload")
-        self.FileUpload.setMinimumSize(QSize(200, 60))
-        self.FileUpload.setFont(font2)
+        self.FileUpload.setMinimumSize(QSize(200, 200))
+        self.FileUpload.setCursor(QCursor(Qt.PointingHandCursor))
+        self.FileUpload.setStyleSheet(u"QPushButton{\n"
+"image: url(:/home/Icons/envio.png);\n"
+"background-color: rgba(255, 255, 255, 0.5);\n"
+"border: 2px solid rgb(132, 132, 132);\n"
+"border-radius: 5px;\n"
+"margin: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: rgb(255, 255, 255);\n"
+"border: 5px solid rgb(102, 102, 102);\n"
+"border-radius: 5px\n"
+"}")
 
-        self.horizontalLayout_3.addWidget(self.FileUpload)
+        self.verticalLayout_10.addWidget(self.FileUpload)
 
 
-        self.horizontalLayout_4.addLayout(self.horizontalLayout_3)
+        self.horizontalLayout_3.addLayout(self.verticalLayout_10)
 
 
-        self.gridLayout.addWidget(self.frame, 0, 0, 1, 1)
+        self.verticalLayout_13.addLayout(self.horizontalLayout_3)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 183, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_13.addItem(self.verticalSpacer_4)
+
+        self.horizontalSpacer_5 = QSpacerItem(1047, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.verticalLayout_13.addItem(self.horizontalSpacer_5)
 
         self.tabWidget.addTab(self.widget, "")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.widget), u"")
@@ -331,7 +464,7 @@ class Ui_CrawTo(object):
 
         self.retranslateUi(CrawTo)
 
-        self.Pages.setCurrentIndex(2)
+        self.Pages.setCurrentIndex(3)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -346,11 +479,20 @@ class Ui_CrawTo(object):
         self.Nome.setText(QCoreApplication.translate("CrawTo", u"NOME COMPLETO", None))
         self.CPF.setText(QCoreApplication.translate("CrawTo", u"CPF", None))
         self.Funcao.setText(QCoreApplication.translate("CrawTo", u"E-mail", None))
+        self.label.setText(QCoreApplication.translate("CrawTo", u"FUN\u00c7\u00c3O", None))
         self.Matricula.setText(QCoreApplication.translate("CrawTo", u"MATRICULA", None))
         self.SenhaDeAcesso.setText(QCoreApplication.translate("CrawTo", u"SENHA DE ACESSO", None))
+        self.label_2.setText(QCoreApplication.translate("CrawTo", u"REPETIR SENHA", None))
         self.InsertemLotes.setText(QCoreApplication.translate("CrawTo", u"Cadastro em Lotes", None))
         self.Salvar.setText(QCoreApplication.translate("CrawTo", u"Salvar Altera\u00e7\u00f5es", None))
-        self.CadastrarUsuario.setText(QCoreApplication.translate("CrawTo", u"Cadastrar Usu\u00e1rio", None))
-        self.FileUpload.setText(QCoreApplication.translate("CrawTo", u"Upload de Arquivos", None))
+        self.EnvioDeAvisos.setText(QCoreApplication.translate("CrawTo", u"Envio De Avisos", None))
+        self.CentralAvisos.setText("")
+#if QT_CONFIG(tooltip)
+        self.CadastroUsuarios.setToolTip(QCoreApplication.translate("CrawTo", u"<html><head/><body><p align=\"center\">Cadastro de Usu\u00e1rios</p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.CadastroUsuarios.setText(QCoreApplication.translate("CrawTo", u"Cadastro de Usu\u00e1rios", None))
+        self.CadastrarUsuario.setText("")
+        self.ArquivoEnvio.setText(QCoreApplication.translate("CrawTo", u"File Upload", None))
+        self.FileUpload.setText("")
     # retranslateUi
 

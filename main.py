@@ -85,6 +85,8 @@ class MainWindow(QMainWindow, Ui_CrawTo):
         self.retornar.clicked.connect(lambda: self.Pages.setCurrentWidget(self.MenuPrincipal))
         self.CadastrarUsuario.clicked.connect(lambda: self.Pages.setCurrentWidget(self.CadastroUsuario))
         self.FileUpload.clicked.connect(lambda: self.Pages.setCurrentWidget(self.UploadArquivos))
+        self.CentralAvisos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.CentralDeAvisos))
+
 
         ## Fechar Aplicação
         self.Sair.clicked.connect(lambda: self.exitapp())
@@ -114,7 +116,7 @@ class CadastroEmLotes(QWidget, Ui_Cadastro):
 
 
         
-    def openpath(self)
+    #def openpath(self)
         
    
 if __name__ == "__main__":
