@@ -3,7 +3,7 @@ from PySide2.QtWidgets import(QApplication, QFileDialog,
 from PySide2 import QtCore
 from PySide2.QtGui import QIcon
 
-import sys
+import sys, os
 import requests
  
 from tkinter import *
@@ -31,7 +31,9 @@ class Login(QWidget, Ui_Form):
     def __init__(self) -> None:
         super(Login, self).__init__()
         self.setupUi(self)
-        self.setWindowTitle('Login CrawJUD')
+        diricon = os.path.join(os.getcwd(),'Icons','faviconproexpress.png')
+        self.setWindowIcon(QIcon(diricon))
+        self.setWindowTitle("ControlDocs - Proexpress")
 
         self.EnterButton.clicked.connect(self.opensys)
 
@@ -79,7 +81,9 @@ class MainWindow(QMainWindow, Ui_CrawTo):
     def __init__(self) -> None:
         super(MainWindow, self).__init__()
         self.setupUi(self)
-        self.setWindowTitle("CrawJUD - Gestão Processual")
+        self.setWindowTitle("ControlDocs - Proexpress")
+        diricon = os.path.join(os.getcwd(),'Icons','faviconproexpress.png')
+        self.setWindowIcon(QIcon(diricon))
 
         ## Janelas do Aplicativo
         self.retornar.clicked.connect(lambda: self.Pages.setCurrentWidget(self.MenuPrincipal))
@@ -111,8 +115,10 @@ class MainWindow(QMainWindow, Ui_CrawTo):
 class CadastroEmLotes(QWidget, Ui_Cadastro):
     def __init__(self) -> None:
         super(CadastroEmLotes, self).__init__()
+        diricon = os.path.join(os.getcwd(),'Icons','faviconproexpress.png')
+        self.setWindowIcon(QIcon(diricon))
         self.setupUi(self)
-        self.setWindowTitle('Cadastro Em Lote')
+        self.setWindowTitle("ControlDocs - Proexpress")
 
 
         
