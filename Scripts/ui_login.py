@@ -12,7 +12,7 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
-import rc_icons
+import Scripts.rc_icons as rc_icons
 
 class Ui_Form(object):
     def setupUi(self, Form):

@@ -12,7 +12,7 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
-import rc_icons
+import Scripts.rc_icons as rc_icons
 
 class Ui_CrawTo(object):
     def setupUi(self, CrawTo):
@@ -41,6 +41,7 @@ class Ui_CrawTo(object):
         self.retornar.setObjectName(u"retornar")
         self.retornar.setMinimumSize(QSize(48, 50))
         self.retornar.setMaximumSize(QSize(45, 50))
+        self.retornar.setCursor(QCursor(Qt.PointingHandCursor))
         self.retornar.setStyleSheet(u"QPushButton{\n"
 "image: url(:/home/Icons/retorna.png);\n"
 "background-color: rgba(255, 255, 255, 0.5);\n"

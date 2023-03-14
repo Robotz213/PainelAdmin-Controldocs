@@ -78,6 +78,9 @@
            <height>50</height>
           </size>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
 image: url(:/home/Icons/retorna.png);
@@ -152,7 +155,7 @@ border-radius: 5px
     <item>
      <widget class="QStackedWidget" name="Pages">
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="CadastroUsuario">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -569,8 +572,6 @@ border-radius: 5px
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="UploadArquivos"/>
-      <widget class="QWidget" name="CentralDeAvisos"/>
       <widget class="QWidget" name="MenuPrincipal">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <property name="spacing">
