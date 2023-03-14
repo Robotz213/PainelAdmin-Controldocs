@@ -173,12 +173,12 @@ class Ui_CrawTo(object):
 
         self.verticalLayout_7.addWidget(self.Funcao)
 
-        self.lineFuncao = QLineEdit(self.frame_4)
-        self.lineFuncao.setObjectName(u"lineFuncao")
-        self.lineFuncao.setFont(font1)
-        self.lineFuncao.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.lineMails = QLineEdit(self.frame_4)
+        self.lineMails.setObjectName(u"lineMails")
+        self.lineMails.setFont(font1)
+        self.lineMails.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.verticalLayout_7.addWidget(self.lineFuncao)
+        self.verticalLayout_7.addWidget(self.lineMails)
 
         self.horizontalSpacer_3 = QSpacerItem(250, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
@@ -195,12 +195,12 @@ class Ui_CrawTo(object):
 
         self.verticalLayout_3.addWidget(self.label)
 
-        self.lineEdit = QLineEdit(self.frame_4)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setFont(font1)
-        self.lineEdit.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.lineFuncao = QLineEdit(self.frame_4)
+        self.lineFuncao.setObjectName(u"lineFuncao")
+        self.lineFuncao.setFont(font1)
+        self.lineFuncao.setStyleSheet(u"background-color: rgb(255, 255, 255);")
 
-        self.verticalLayout_3.addWidget(self.lineEdit)
+        self.verticalLayout_3.addWidget(self.lineFuncao)
 
 
         self.verticalLayout_9.addLayout(self.verticalLayout_3)
@@ -314,12 +314,6 @@ class Ui_CrawTo(object):
         self.verticalLayout_2.addWidget(self.frame_4)
 
         self.Pages.addWidget(self.CadastroUsuario)
-        self.UploadArquivos = QWidget()
-        self.UploadArquivos.setObjectName(u"UploadArquivos")
-        self.Pages.addWidget(self.UploadArquivos)
-        self.CentralDeAvisos = QWidget()
-        self.CentralDeAvisos.setObjectName(u"CentralDeAvisos")
-        self.Pages.addWidget(self.CentralDeAvisos)
         self.MenuPrincipal = QWidget()
         self.MenuPrincipal.setObjectName(u"MenuPrincipal")
         self.horizontalLayout_2 = QHBoxLayout(self.MenuPrincipal)
@@ -465,7 +459,7 @@ class Ui_CrawTo(object):
 
         self.retranslateUi(CrawTo)
 
-        self.Pages.setCurrentIndex(3)
+        self.Pages.setCurrentIndex(1)
         self.tabWidget.setCurrentIndex(0)
 
 

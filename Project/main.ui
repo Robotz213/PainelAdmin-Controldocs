@@ -325,7 +325,7 @@ border-radius: 5px
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineFuncao">
+              <widget class="QLineEdit" name="lineMails">
                <property name="font">
                 <font>
                  <pointsize>15</pointsize>
@@ -369,7 +369,7 @@ border-radius: 5px
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit">
+              <widget class="QLineEdit" name="lineFuncao">
                <property name="font">
                 <font>
                  <pointsize>15</pointsize>
