@@ -16,3 +16,4 @@ mysql-connector-python
 Selenium
 webdriver_manager
 auto-py-to-exe
+google-cloud
