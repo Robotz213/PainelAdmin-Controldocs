@@ -17,3 +17,5 @@ Selenium
 webdriver_manager
 google-cloud
 google-auth
+oauth2client
+google-cloud-storage
