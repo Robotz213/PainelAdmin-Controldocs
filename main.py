@@ -269,7 +269,46 @@ class CentralDeAvisos(QWidget, Ui_Avisos):
         self.setupUi(self)
         self.setWindowTitle("ControlDocs - Proexpress")
 
+        self.BuscarPlanilha.clicked.connect(lambda: self.openfile())
+
+        self.EnvioAvisos.clicked.connect(lambda: self.initcadastro(input_filename=self.lineEndr.text()))
+
+    
+    def openfile(self):
+        input_filename = QtWidgets.QFileDialog.getOpenFileName()[0]
+        self.lineEndr.setText(input_filename)
+                
+    def initcadastro(self, input_filename):
+        conexao = ConnectDB().__mysql__()
+        startDB = conexao.cursor()
+        
+        
+        wrkbk_input = openpyxl.load_workbook(filename=input_filename)
+        sheet_input = wrkbk_input.active
+
+        for i in range(2, sheet_input.max_row+1):
+            cell_obj = sheet_input.cell(row=i, column=1)
+            if cell_obj.value is not None and cell_obj.value != '':
+                aviso = cell_obj.value
+                data = sheet_input.cell(row=i, column=2).value
+
+                infotocat = [aviso, data]
+
+                try:
+                    
+                    startDB.execute(f'INSERT INTO avisos (aviso, data) VALUES ("{infotocat[0]}", "{infotocat[1]}")')
+                    conexao.commit()
+
+                except Exception as e:
+                    print(e)
+
+                    
+            if i == sheet_input.max_row:
+                showinfo('SUCESSO', 'Avisos Enviados!')
+                conexao.close()
+
 class Uploadfiles(QWidget, Ui_Upload):
+
     def __init__(self) -> None:
         super(Uploadfiles, self).__init__()
         diricon = os.path.join(os.getcwd(),'Icons','faviconproexpress.png')
@@ -362,14 +401,7 @@ class Uploadfiles(QWidget, Ui_Upload):
                     
             if i == sheet_input.max_row:
                 showinfo('SUCESSO', 'Arquivos enviados com sucesso')
-
-
-
-
-        
-    #def openpath(self)
-        
-   
+  
 if __name__ == "__main__":
     
     
