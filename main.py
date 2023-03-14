@@ -14,6 +14,10 @@ from tkinter.messagebox import showinfo
 from time import sleep
 from Scripts.ui_main import Ui_CrawTo
 from Scripts.ui_login import Ui_Form
+from Scripts.ui_cadastroemlotes import Ui_Cadastro
+from Scripts.ui_sendavisos import Ui_Avisos
+from Scripts.ui_uploadfiles import Ui_Upload
+
 from hashlib import sha512
 
 
@@ -87,9 +91,9 @@ class MainWindow(QMainWindow, Ui_CrawTo):
 
         ## Janelas do Aplicativo
         self.retornar.clicked.connect(lambda: self.Pages.setCurrentWidget(self.MenuPrincipal))
-        self.CadastrarUsuario.clicked.connect(lambda: self.Pages.setCurrentWidget(self.CadastroUsuario))
-        self.FileUpload.clicked.connect(lambda: self.Pages.setCurrentWidget(self.UploadArquivos))
-        self.CentralAvisos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.CentralDeAvisos))
+        self.CadastrarUsuario.clicked.connect(lambda: self.cadlotes)
+        self.FileUpload.clicked.connect(lambda: self.uploadfiles)
+        self.CentralAvisos.clicked.connect(lambda: self.avisolot)
 
 
         ## Fechar Aplicação
@@ -106,10 +110,20 @@ class MainWindow(QMainWindow, Ui_CrawTo):
 
             sys.exit()
 
-    def cadastraremlotes(self):
+    def cadlotes(self):
 
         self.w = CadastroEmLotes()
         self.w.show()
+
+    def avisolot(self):
+
+        self.w = CentralDeAvisos()
+        self.w.show()
+
+    def uploadfiles(self):
+        self.w = Uploadfiles()
+        self.w.show()
+
         
 
 class CadastroEmLotes(QWidget, Ui_Cadastro):
@@ -120,13 +134,23 @@ class CadastroEmLotes(QWidget, Ui_Cadastro):
         self.setupUi(self)
         self.setWindowTitle("ControlDocs - Proexpress")
 
-class CentralDeAvisos(QWidget, Ui_Cadastro):
+class CentralDeAvisos(QWidget, Ui_Avisos):
     def __init__(self) -> None:
-        super(CadastroEmLotes, self).__init__()
+        super(CentralDeAvisos, self).__init__()
         diricon = os.path.join(os.getcwd(),'Icons','faviconproexpress.png')
         self.setWindowIcon(QIcon(diricon))
         self.setupUi(self)
         self.setWindowTitle("ControlDocs - Proexpress")
+
+class Uploadfiles(QWidget, Ui_Upload):
+    def __init__(self) -> None:
+        super(Uploadfiles, self).__init__()
+        diricon = os.path.join(os.getcwd(),'Icons','faviconproexpress.png')
+        self.setWindowIcon(QIcon(diricon))
+        self.setupUi(self)
+        self.setWindowTitle("ControlDocs - Proexpress")
+
+
 
 
         
