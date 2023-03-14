@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="home">
+    <file>../Icons/LOGOPROEXPRESS2-removebg-preview.png</file>
+    <file>../Icons/faviconproexpress.png</file>
     <file>../Icons/aviso.png</file>
     <file>../Icons/envio.png</file>
     <file>../Icons/retorna.png</file>

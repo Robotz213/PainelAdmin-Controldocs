@@ -12,6 +12,7 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
+import rc_icons
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -65,8 +66,14 @@ class Ui_Form(object):
 "}")
         self.frame_5 = QFrame(self.frame_4)
         self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setGeometry(QRect(191, 29, 16, 200))
+        self.frame_5.setGeometry(QRect(90, 20, 200, 200))
         self.frame_5.setMaximumSize(QSize(200, 200))
+        self.frame_5.setStyleSheet(u"image: url(:/home/Icons/LOGOPROEXPRESS2-removebg-preview.png);\n"
+"background-color: rgba(255, 255, 255, 0.4);\n"
+"border: 5px solid rgb(45,45,45);\n"
+"border-radius: 15px;\n"
+"padding: 15px;\n"
+"")
         self.frame_5.setFrameShape(QFrame.NoFrame)
         self.frame_5.setFrameShadow(QFrame.Raised)
         self.PasswordFrame = QLineEdit(self.frame_4)

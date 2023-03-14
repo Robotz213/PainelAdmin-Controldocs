@@ -143,9 +143,9 @@
         <widget class="QFrame" name="frame_5">
          <property name="geometry">
           <rect>
-           <x>191</x>
-           <y>29</y>
-           <width>16</width>
+           <x>90</x>
+           <y>20</y>
+           <width>200</width>
            <height>200</height>
           </rect>
          </property>
@@ -154,6 +154,14 @@
            <width>200</width>
            <height>200</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">image: url(:/home/Icons/LOGOPROEXPRESS2-removebg-preview.png);
+background-color: rgba(255, 255, 255, 0.4);
+border: 5px solid rgb(45,45,45);
+border-radius: 15px;
+padding: 15px;
+</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -274,6 +282,8 @@ border-radius: 5px
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections/>
 </ui>
