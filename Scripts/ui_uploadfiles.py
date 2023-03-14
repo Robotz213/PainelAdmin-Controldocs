@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'cadastroemlotes.ui'
+## Form generated from reading UI file 'uploadfiles.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -82,11 +82,11 @@ class Ui_Cadastro(object):
 
         self.verticalLayout_3.addWidget(self.frame)
 
-        self.IniciarCadastro = QPushButton(self.widget)
-        self.IniciarCadastro.setObjectName(u"IniciarCadastro")
-        self.IniciarCadastro.setFont(font)
-        self.IniciarCadastro.setCursor(QCursor(Qt.PointingHandCursor))
-        self.IniciarCadastro.setStyleSheet(u"QPushButton{\n"
+        self.IniciarUpload = QPushButton(self.widget)
+        self.IniciarUpload.setObjectName(u"IniciarUpload")
+        self.IniciarUpload.setFont(font)
+        self.IniciarUpload.setCursor(QCursor(Qt.PointingHandCursor))
+        self.IniciarUpload.setStyleSheet(u"QPushButton{\n"
 "background-color: rgba(255, 255, 255, 0.5);\n"
 "border: 3px solid rgb(132, 132, 132);\n"
 "border-radius: 5px;\n"
@@ -99,7 +99,7 @@ class Ui_Cadastro(object):
 "border-radius: 5px\n"
 "}")
 
-        self.verticalLayout_3.addWidget(self.IniciarCadastro)
+        self.verticalLayout_3.addWidget(self.IniciarUpload)
 
 
         self.verticalLayout_4.addWidget(self.widget, 0, Qt.AlignVCenter)
@@ -112,8 +112,8 @@ class Ui_Cadastro(object):
 
     def retranslateUi(self, Cadastro):
         Cadastro.setWindowTitle(QCoreApplication.translate("Cadastro", u"Form", None))
-        self.label.setText(QCoreApplication.translate("Cadastro", u"Informe a planilha com usu\u00e1rios a serem cadastrados", None))
+        self.label.setText(QCoreApplication.translate("Cadastro", u"Informe a planilha com arquivos a serem enviados", None))
         self.BuscarPlanilha.setText(QCoreApplication.translate("Cadastro", u"Buscar", None))
-        self.IniciarCadastro.setText(QCoreApplication.translate("Cadastro", u"Iniciar", None))
+        self.IniciarUpload.setText(QCoreApplication.translate("Cadastro", u"Iniciar", None))
     # retranslateUi
 

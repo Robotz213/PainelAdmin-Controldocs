@@ -120,6 +120,14 @@ class CadastroEmLotes(QWidget, Ui_Cadastro):
         self.setupUi(self)
         self.setWindowTitle("ControlDocs - Proexpress")
 
+class CentralDeAvisos(QWidget, Ui_Cadastro):
+    def __init__(self) -> None:
+        super(CadastroEmLotes, self).__init__()
+        diricon = os.path.join(os.getcwd(),'Icons','faviconproexpress.png')
+        self.setWindowIcon(QIcon(diricon))
+        self.setupUi(self)
+        self.setWindowTitle("ControlDocs - Proexpress")
+
 
         
     #def openpath(self)

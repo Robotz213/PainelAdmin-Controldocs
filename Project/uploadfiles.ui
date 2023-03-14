@@ -58,7 +58,7 @@
 background-color: rgba(0, 0, 0, 0.3);</string>
              </property>
              <property name="text">
-              <string>Informe a planilha com usuários a serem cadastrados</string>
+              <string>Informe a planilha com arquivos a serem enviados</string>
              </property>
             </widget>
            </item>
@@ -108,7 +108,7 @@ border-radius: 5px
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="IniciarCadastro">
+       <widget class="QPushButton" name="IniciarUpload">
         <property name="font">
          <font>
           <pointsize>10</pointsize>
