@@ -34,7 +34,6 @@ from hashlib import sha512
 
 import json
 from Config.sqlconfig import ConnectDB
-import pandas as pd
 import pathlib
 from Scripts.ui_cadastroemlotes import Ui_Cadastro
 
