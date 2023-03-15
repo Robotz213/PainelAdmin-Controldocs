@@ -15,5 +15,3 @@ Selenium
 webdriver_manager
 google-cloud-storage
 google-auth
-openpyxl
-oauth2client
