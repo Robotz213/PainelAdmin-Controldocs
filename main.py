@@ -190,7 +190,8 @@ class MainWindow(QMainWindow, Ui_CrawTo):
             hashedPW = sha512(bypassPW[0].encode()).hexdigest()
             startDB.execute(f'INSERT INTO users (user, cpf, email, password, funcao, matricula) VALUES ("{infotocat[0]}", "{infotocat[1]}", "{infotocat[2]}", "{hashedPW}", "{infotocat[3]}", "{infotocat[4]}")')
             conexao.commit()
-
+            startDB.execute(f'INSERT INTO files (usuario, cpf)  VALUES ("{NomeUsuario}", "{cpf}")')
+            conexao.commit()
             showinfo('SUCESSO', 'Usuário cadastrado com sucesso')
 
 class CadastroEmLotes(QWidget, Ui_Cadastro):
@@ -244,6 +245,8 @@ class CadastroEmLotes(QWidget, Ui_Cadastro):
                         hashedPW = sha512(infotocat[5].encode()).hexdigest()
                         startDB.execute(f'INSERT INTO users (user, cpf, password, funcao, matricula) VALUES ("{infotocat[1]}", "{infotocat[2]}", "{hashedPW}", "{infotocat[3]}", "{infotocat[0]}")')
                         conexao.commit()
+                        startDB.execute(f'INSERT INTO files (usuario, cpf) VALUES ("{funcionario}", "{CPF}")')
+                        conexao.commit()
 
                     except Exception as e:
                         print(e)
@@ -252,6 +255,9 @@ class CadastroEmLotes(QWidget, Ui_Cadastro):
                         hashedPW = sha512(senha.encode()).hexdigest()
                         startDB.execute(f'INSERT INTO users (user, cpf, email, password, funcao, matricula) VALUES ("{infotocat[1]}", "{infotocat[2]}", "{infotocat[4]}", "{hashedPW}", "{infotocat[3]}", "{infotocat[0]}")')
                         conexao.commit()
+                        startDB.execute(f'INSERT INTO files (usuario, cpf) VALUES ("{funcionario}", "{CPF}")')
+                        conexao.commit()
+
 
                     except Exception as e:
                         print(e)
@@ -350,7 +356,8 @@ class Uploadfiles(QWidget, Ui_Upload):
 
                 elif infotocat is not None:
                     try:
-                        startDB.execute(f'INSERT INTO files (usuario, tipo_de_arquivo, data_de_inclusao, link_para_download) VALUES ("{infotocat[0]}", "{infotocat[1]}", "{infotocat[3]}", "{infotocat[2]}")')
+                        
+                        startDB.execute(f'INSERT INTO files (tipo_de_arquivo, data_de_inclusão, link_para_download) VALUES ("{tipodoc}", "{mesanoreferencia}", "{documento}") WHERE usuario = "{funcionario}"')
                         conexao.commit()
                         
 
