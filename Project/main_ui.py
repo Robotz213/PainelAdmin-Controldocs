@@ -12,7 +12,7 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
-import Scripts.rc_icons as rc_icons
+import icons_rc
 
 class Ui_CrawTo(object):
     def setupUi(self, CrawTo):
@@ -32,7 +32,7 @@ class Ui_CrawTo(object):
         self.Dockbar.setObjectName(u"Dockbar")
         self.Dockbar.setMinimumSize(QSize(64, 480))
         self.Dockbar.setMaximumSize(QSize(60, 16777215))
-        self.Dockbar.setStyleSheet(u"background-color: rgb(0, 0, 127);\n"
+        self.Dockbar.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
 "")
         self.Dockbar.setFrameShape(QFrame.NoFrame)
         self.Dockbar.setFrameShadow(QFrame.Raised)

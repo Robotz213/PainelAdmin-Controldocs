@@ -50,7 +50,7 @@ class Login(QWidget, Ui_Form):
         self.setWindowTitle("ControlDocs - Proexpress")
 
         self.EnterButton.clicked.connect(self.opensys)
-
+        self.PasswordFrame.returnPressed.connect(self.opensys)
     def opensys(self):
 
 
@@ -76,14 +76,13 @@ class Login(QWidget, Ui_Form):
                     password = startDB.fetchall()
                     pass_word = password[0]
                     if hashed_password in pass_word:
-                        self.w = MainWindow()
                         logintime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # registra data e hora do login
 
                         # atualiza a coluna login_time na tabela users com a hora de login
                         startDB.execute("UPDATE users SET login_time = %s WHERE user = %s", [logintime, self.UserFrame.text()])
                         conexao.commit()
+                        self.w = MainWindow()
                         self.w.show()
-                        sleep(0.25)
                         self.close()
 
                 except Exception as e:
@@ -94,11 +93,12 @@ class Login(QWidget, Ui_Form):
             sleep(0.25)
             if self.UserFrame.text() in cpf[0]:
                 try:
+                    cpf = cpf[0][0]
                     hashed_password = sha512(self.PasswordFrame.text().encode()).hexdigest()
-                    checkpassword = f'SELECT password FROM users WHERE cpf = "{self.UserFrame.text()}"'
+                    checkpassword = f'SELECT password FROM users WHERE cpf = {cpf}'
                     startDB.execute(checkpassword)
                     password = startDB.fetchall()
-                    pass_word = password[0]
+                    pass_word = password[0][0]
                     if hashed_password in pass_word:
                         self.w = MainWindow()
                         logintime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # registra data e hora do login
@@ -109,6 +109,8 @@ class Login(QWidget, Ui_Form):
                         sleep(0.25)
                         self.w.show()
                         self.close()
+                    else:
+                        showerror('Erro', 'Senha incorreta')
                 except Exception as e:
                     showerror('Erro', 'Senha incorreta')
                     conexao.close()
@@ -174,13 +176,11 @@ class MainWindow(QMainWindow, Ui_CrawTo):
         NomeUsuario = self.lineNome.text()
         cpf = self.lineCPF.text()
         email = self.lineMails.text()
-        Funcao = self.lineFuncao.text()
-        matricula = self.lineMatricula.text()
-
         senha = self.lineSenha.text()
         confirmsenha = self.lineEdit_2.text()
-        
-        infotocat = [NomeUsuario, cpf, email,Funcao, matricula]
+        tipousuario = self.UsuarioTipo.currentText()
+        if tipousuario == 'Administrador':
+            tipousuario = 'ADMIN'
         bypassPW = [senha, confirmsenha]
 
 
@@ -188,9 +188,7 @@ class MainWindow(QMainWindow, Ui_CrawTo):
             showerror('ERRO', 'Senhas não conferem')
         else:
             hashedPW = sha512(bypassPW[0].encode()).hexdigest()
-            startDB.execute(f'INSERT INTO users (user, cpf, email, password, funcao, matricula) VALUES ("{infotocat[0]}", "{infotocat[1]}", "{infotocat[2]}", "{hashedPW}", "{infotocat[3]}", "{infotocat[4]}")')
-            conexao.commit()
-            startDB.execute(f'INSERT INTO files (usuario, cpf)  VALUES ("{NomeUsuario}", "{cpf}")')
+            startDB.execute(f'INSERT INTO users (user, type_user, cpf, email, password) VALUES ("{NomeUsuario}", "{tipousuario}", "{cpf}", "{email}", "{hashedPW}")')
             conexao.commit()
             showinfo('SUCESSO', 'Usuário cadastrado com sucesso')
 
@@ -221,42 +219,32 @@ class CadastroEmLotes(QWidget, Ui_Cadastro):
         for i in range(2, sheet_input.max_row+1):
             cell_obj = sheet_input.cell(row=i, column=1)
             if cell_obj.value is not None and cell_obj.value != '':
-                matricula = cell_obj.value.replace(' ','')
-                funcionario = sheet_input.cell(row=i, column=2).value
-                CPF = sheet_input.cell(row=i, column=3).value
-                funcao = sheet_input.cell(row=i, column=4).value
+                funcionario = sheet_input.cell(row=i, column=1).value
+                CPF = sheet_input.cell(row=i, column=2).value
                 try:
-                    email = sheet_input.cell(row=i, column=5).value
+                    email = sheet_input.cell(row=i, column=3).value
                 except:
                     email = ''
                 try:
-                    senha = sheet_input.cell(row=i, column=6).value
+                    senha = sheet_input.cell(row=i, column=4).value
                 except:
                     senha = ''
 
-                infotocat = [matricula, funcionario, CPF, funcao, email, senha]
-
-                if infotocat[5] is None:
+                infotocat = [funcionario, CPF, email, senha]
+                typeuser = 'Usuário Padrão'
+                if infotocat[3] is None:
                     showerror('ERRO', 'Usuário para cadastro da linha nº{} não possui senha informada'.format(i))
                     break
 
-                elif infotocat[4] is None:
+                else:
                     try:
-                        hashedPW = sha512(infotocat[5].encode()).hexdigest()
-                        startDB.execute(f'INSERT INTO users (user, cpf, password, funcao, matricula) VALUES ("{infotocat[1]}", "{infotocat[2]}", "{hashedPW}", "{infotocat[3]}", "{infotocat[0]}")')
+                        hashedPW = sha512(infotocat[3].encode()).hexdigest()
+                        comando = f'INSERT INTO users (user, type_user, cpf, email, password) VALUES ("{infotocat[0]}", "{typeuser}", "{infotocat[1]}", "{infotocat[2]}","{hashedPW}")'
+                        startDB.execute(comando)
                         conexao.commit()
                         startDB.execute(f'INSERT INTO files (usuario, cpf) VALUES ("{funcionario}", "{CPF}")')
                         conexao.commit()
 
-                    except Exception as e:
-                        print(e)
-                else:
-                    try:
-                        hashedPW = sha512(senha.encode()).hexdigest()
-                        startDB.execute(f'INSERT INTO users (user, cpf, email, password, funcao, matricula) VALUES ("{infotocat[1]}", "{infotocat[2]}", "{infotocat[4]}", "{hashedPW}", "{infotocat[3]}", "{infotocat[0]}")')
-                        conexao.commit()
-                        startDB.execute(f'INSERT INTO files (usuario, cpf) VALUES ("{funcionario}", "{CPF}")')
-                        conexao.commit()
 
 
                     except Exception as e:
@@ -356,11 +344,12 @@ class Uploadfiles(QWidget, Ui_Upload):
 
                 elif infotocat is not None:
                     try:
-                        
-                        startDB.execute(f'INSERT INTO files (tipo_de_arquivo, data_de_inclusão, link_para_download) VALUES ("{tipodoc}", "{mesanoreferencia}", "{documento}") WHERE usuario = "{funcionario}"')
-                        conexao.commit()
-                        
-
+                        if tipodoc == 'CONTRATO (NÃO ASSINADO)':
+                            startDB.execute(f'UPDATE files SET tipo_de_arquivo = "{tipodoc}", data_de_inclusao = "{mesanoreferencia}", link_para_download = "{documento}" WHERE usuario = "{funcionario}"')
+                            conexao.commit()
+                        elif tipodoc =='HOLERITE':
+                            startDB.execute(f'INSERT INTO files (tipo_de_arquivo, data_de_inclusao, link_para_download) values ("{tipodoc}","{mesanoreferencia}", "{documento}")')
+                            conexao.commit()
                         filetoupload = pathxlsx / documento
                         print(filetoupload)
                         credentials_dict = {
