@@ -179,18 +179,73 @@ class MainWindow(QMainWindow, Ui_CrawTo):
         senha = self.lineSenha.text()
         confirmsenha = self.lineEdit_2.text()
         tipousuario = self.UsuarioTipo.currentText()
+        Alteracao = []
         if tipousuario == 'Administrador':
-            tipousuario = 'ADMIN'
+                tipousuario = 'ADMIN'
         bypassPW = [senha, confirmsenha]
+        
+        if len(bypassPW) > 0:
+            if bypassPW[0] != bypassPW[1]:
+                showerror('ERRO', 'Senhas não conferem')
+            else:
+                hashedPW = sha512(bypassPW[0].encode()).hexdigest()
 
+                
+        startDB.execute(f"SELECT * FROM users WHERE cpf = '{cpf}'")
+        result = startDB.fetchall()
+        
+        if len(result) > 0:
+            a = result[0][4]
+            b = result[0][2]
+            c = result[0][5]
 
-        if bypassPW[0] != bypassPW[1]:
-            showerror('ERRO', 'Senhas não conferem')
-        else:
-            hashedPW = sha512(bypassPW[0].encode()).hexdigest()
+            altersenha = atualizasenha(senha, c)
+            alteremail = atualizaemail(email, a)
+            alterperms = atualizaperms(tipousuario, b)
+
+            print(altersenha)
+            print(alteremail)
+            print(alterperms)
+
+        else: 
             startDB.execute(f'INSERT INTO users (user, type_user, cpf, email, password) VALUES ("{NomeUsuario}", "{tipousuario}", "{cpf}", "{email}", "{hashedPW}")')
             conexao.commit()
             showinfo('SUCESSO', 'Usuário cadastrado com sucesso')
+
+        def atualizasenha(senha, c):
+            
+            if senha != '':
+                if senha != c:
+                    startDB.execute(f'UPDATE users SET password="{hashedPW}" WHERE cpf = "{cpf}"')
+                    conexao.commit()
+                    Alteracao.append(f'{bypassPW[0]}\n')
+                    return 'Senha'
+            
+            else: pass
+        
+        def atualizaemail(email, a):
+            
+            if email != '':
+                if email != a:
+                    startDB.execute(f'UPDATE users SET email="{email}" WHERE cpf = "{cpf}"')
+                    conexao.commit()
+                    Alteracao.append()
+                    return 'Email'
+            
+            else: return False
+
+        def atualizaperms(tipousuario, b):
+            
+            if tipousuario != '':
+                if tipousuario != b:
+                    
+                    startDB.execute(f'UPDATE users SET type_user="{tipousuario}" WHERE cpf = "{cpf}"')
+                    conexao.commit()
+                    Alteracao.append(f'{tipousuario}\n')
+                    return 'Permissões'
+            
+            else: return False
+        
 
 class CadastroEmLotes(QWidget, Ui_Cadastro):
     def __init__(self) -> None:
@@ -401,7 +456,7 @@ if __name__ == "__main__":
     
     
     app = QApplication(sys.argv)
-    window = Login()
+    window = MainWindow()
     window.show()
     app.exec_()
     
