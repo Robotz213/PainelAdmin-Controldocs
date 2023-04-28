@@ -281,7 +281,7 @@ class CadastroEmLotes(QWidget, Ui_Cadastro):
                 except:
                     email = ''
                 try:
-                    senha = sheet_input.cell(row=i, column=4).value
+                    senha = sheet_input.cell(row=i, column=4).value.replace(".", "")
                 except:
                     senha = ''
 
@@ -297,8 +297,10 @@ class CadastroEmLotes(QWidget, Ui_Cadastro):
                         comando = f'INSERT INTO users (user, type_user, cpf, email, password) VALUES ("{infotocat[0]}", "{typeuser}", "{infotocat[1]}", "{infotocat[2]}","{hashedPW}")'
                         startDB.execute(comando)
                         conexao.commit()
-                        startDB.execute(f'INSERT INTO files (usuario, cpf) VALUES ("{funcionario}", "{CPF}")')
-                        conexao.commit()
+                        self.label.setText(f'Usuário {i} cadastrado com sucesso!')
+                        sleep(0.25)
+                        # startDB.execute(f'INSERT INTO files (usuario, cpf) VALUES ("{funcionario}", "{CPF}")')
+                        # conexao.commit()
 
 
 
@@ -308,6 +310,7 @@ class CadastroEmLotes(QWidget, Ui_Cadastro):
                     
             if i == sheet_input.max_row:
                 showinfo('SUCESSO', 'Usuários Cadastrados com sucesso')
+                self.label.setText(f'Usuários Cadastrados com sucesso')
 
 class CentralDeAvisos(QWidget, Ui_Avisos):
     def __init__(self) -> None:
